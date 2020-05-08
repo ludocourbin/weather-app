@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="reset.css" />
+		<link rel="stylesheet" href="style.css" />
+		<title></title>
+	</head>
+	<body>
+		<header>
+			<h1>The Weather App</h1>
+		</header>
+
+		<main class="app" id="app">
+			<div class="data-display">
+				<input
+					type="text"
+					placeholder="Choisissez votre ville"
+					name="city"
+					id="user-choice"
+				/>
+				<div id="card">
+					<div class="flex flex-space-between">
+						<div class="flex">
+							<p id="city">Paris</p>
+							<p id="country">FR</p>
+						</div>
+						<div>
+							<img
+								class="icon"
+								id="icon"
+								src="./cloud.svg"
+								alt=""
+							/>
+
+							<p id="weather-description">Sunny</p>
+						</div>
+					</div>
+
+					<p>Temperature: <span id="temperature">30</span> degrés</p>
+					<p>Wind: <span id="wind">18 </span> km/h</p>
+					<div class="flex">
+						<p>Sunrise: <span id="sunrise">06:30</span></p>
+						<p>Sunset: <span id="sunset">22:30</span></p>
+					</div>
+				</div>
+			</div>
+		</main>
+		<script src="https://cdn.jsdelivr.net/npm/places.js@1.18.2"></script>
+		<script>
+			var placesAutocomplete = places({
+				appId: 'plWGX93WDM6R',
+				apiKey: '4c6059877839349224b877a634f6e139',
+				container: document.querySelector('#user-choice'),
+			});
+		</script>
+		<script src="script.js"></script>
+	</body>
+</html>
