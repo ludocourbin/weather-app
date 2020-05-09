@@ -10,8 +10,14 @@
 	<body>
 		<header>
 			<h1>The Weather App</h1>
+			<a target="_blank" href="https://github.com/ludocourbin"
+				><img src="./images/github.svg" alt=""
+			/></a>
+			<a target="_blank" href="https://www.instagram.com/ludocourbin/">
+				<img src="./images/instagram.svg" alt=""
+			/></a>
 		</header>
-
+		<textarea id="text" name="text"></textarea>
 		<main class="app" id="app">
 			<div class="data-display">
 				<input
@@ -19,6 +25,7 @@
 					placeholder="Choisissez votre ville"
 					name="city"
 					id="user-choice"
+					style="border-radius: 10px;"
 				/>
 				<div id="card">
 					<div class="flex flex-space-between">
@@ -30,7 +37,7 @@
 							<img
 								class="icon"
 								id="icon"
-								src="./cloud.svg"
+								src="./images/cloud.svg"
 								alt=""
 							/>
 
@@ -38,11 +45,31 @@
 						</div>
 					</div>
 
-					<p>Temperature: <span id="temperature">30</span> degrés</p>
-					<p>Wind: <span id="wind">18 </span> km/h</p>
-					<div class="flex">
-						<p>Sunrise: <span id="sunrise">06:30</span></p>
-						<p>Sunset: <span id="sunset">22:30</span></p>
+					<div class="flex-wrap">
+						<div class="flex">
+							<img src="./images/temperature.svg" alt="" />
+							<p><span id="temperature">30</span> degrés</p>
+						</div>
+						<div class="flex">
+							<img src="./images/wind.svg" alt="" />
+							<p><span id="wind">18 </span> km/h</p>
+						</div>
+						<div class="flex">
+							<img src="./images/sunrise.svg" alt="" />
+							<p id="sunrise">06:30</p>
+						</div>
+
+						<div class="flex">
+							<img src="./images/sunset.svg" alt="" />
+							<p id="sunset">22:30</p>
+						</div>
+					</div>
+					<div class="flex sound">
+						<img id="speak" src="./images/volume.svg" alt="" />
+						<img id="stop" src="./images/mute.png" alt="" />
+						<select name="voice" id="voices">
+							<option value="">Select A Voice</option>
+						</select>
 					</div>
 				</div>
 			</div>
@@ -51,7 +78,7 @@
 		<script>
 			var placesAutocomplete = places({
 				appId: 'plWGX93WDM6R',
-				apiKey: '4c6059877839349224b877a634f6e139',
+				apiKey: 'c8f0fa44744deecb6fb7f5638933bcf8',
 				container: document.querySelector('#user-choice'),
 			});
 		</script>
