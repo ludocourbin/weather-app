@@ -40,7 +40,7 @@ app.domElts.userChoice.addEventListener('keyup', function (e) {
 
 const userAction = async () => {
 	const response = await fetch(
-		`http://api.openweathermap.org/data/2.5/weather?q=${app.userCityChoice}&units=metric&appid=${API}`
+		`https://api.openweathermap.org/data/2.5/weather?q=${app.userCityChoice}&units=metric&appid=${API}`
 	);
 	const myJson = await response.json(); //extract JSON from the http response
 	// do something with myJson
