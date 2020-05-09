@@ -50,7 +50,9 @@ const userAction = async () => {
 	app.domElts.description.textContent = myJson.weather[0].description;
 	app.domElts.icon.setAttribute(
 		'src',
-		'http://openweathermap.org/img/wn/' + myJson.weather[0].icon + '@2x.png'
+		'https://openweathermap.org/img/wn/' +
+			myJson.weather[0].icon +
+			'@2x.png'
 	);
 
 	if (myJson.weather[0].description.includes('rain')) {
